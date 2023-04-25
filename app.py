@@ -5,11 +5,11 @@ app = Flask(__name__)
 
 
 
-@app.route('/', methods=['POST','GET'])
+@app.route('/')
 def home():
     
     
-    return render_template("templates\index.index.html")
+    return render_template("index.html")
 
 
 
@@ -18,4 +18,4 @@ def home():
 
 if __name__ == '__main__':
     
-    app.run(port=1000,debug=True)
+    app.run(port=1900,debug=True)
