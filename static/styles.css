@@ -7,33 +7,38 @@ body {
 }
 
 header{
+    width: 99%;
+    border-radius: 5px;
+    background-color: #a1a1a1;
+    padding: 2px;
+    margin-left: 2px;
+}
+
+header div {
     width: 100%;
 }
 
-.header-nav-1 {
-    background-color: #979797;
-    width: 100%;
-    display: block;
-    border-radius: 2%;
+
+header div ul {
+    display: flex;
 }
+
+header div ul li {
+    list-style: none;
+}
+
+
+header div ul li a {
+    text-decoration: none;
+    color: #212121;
+    padding-right: 5px;
+}
+
+
 
 section {
     background-color: #979797;
     width: 100%;
     padding-top: 0px;
     display: block;
-}
-
-.header-ul-2 {
-    display: flex;
-    list-style: none;
-}
-
-.header-ul-2 li {
-    padding-right: 5%;
-    text-decoration: none;
-}
-
-.header-ul-2 li a {
-    text-decoration: none;
 }
