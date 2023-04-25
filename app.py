@@ -12,10 +12,14 @@ def home():
     return render_template("index.html")
 
 
-
+@app.route('/seed')
+def seed():
+    
+    
+    return render_template("seed.html")
 
 
 
 if __name__ == '__main__':
     
-    app.run(port=1930,debug=True)
+    app.run(port=1940,debug=True)
