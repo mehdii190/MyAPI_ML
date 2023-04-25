@@ -22,4 +22,4 @@ def seed():
 
 if __name__ == '__main__':
     
-    app.run(port=1940,debug=True)
+    app.run(port=1960,debug=True)
