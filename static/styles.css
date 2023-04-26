@@ -1,23 +1,21 @@
-
-
 body {
     width: 99%;
     background-color: #d3d5d3;
     font-size: 18px;
 }
 
-header{
+header {
     width: 99%;
     border-radius: 5px;
     background-color: #ffffff;
     padding: 2px;
     margin-left: 2px;
+    margin-bottom: 90px;
 }
 
 header div {
     width: 100%;
 }
-
 
 header div ul {
     display: flex;
@@ -27,18 +25,37 @@ header div ul li {
     list-style: none;
 }
 
-
 header div ul li a {
     text-decoration: none;
     color: #212121;
     padding-right: 40px;
 }
 
-
-
 section {
     background-color: #979797;
     width: 100%;
     padding-top: 0px;
     display: block;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+section div {
+    display: flex;
+    padding-bottom: 60px;
+    padding-top: 60px;
+}
+
+section div div {
+    margin-right: 5px;
+    padding-left: 20px;
+    width: 50%;
+}
+
+section div div div img {
+    border-radius: 10px;
+}
+
+section div div div a {
+    padding-left: 120px;
 }
