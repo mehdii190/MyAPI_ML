@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="static\seed.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <ul>
+          <li>
+            <a href="/"> Home </a>
+          </li>
+          <li>
+            <a href="/seed"> seed </a>
+          </li>
+          <li>
+            <a href=""> digit </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="span4"></div>
+          <div class="span4">
+            <h1>Thank you. Here is the information you have provided.</h1>
+            <ul class="list-group">
+              <li class="list-group-item">
+                Sepal Length: {{ session['SepalLengthCm'] }}
+              </li>
+              <li class="list-group-item">
+                Sepal Width: {{ session['SepalWidthCm'] }}
+              </li>
+              <li class="list-group-item">
+                Petal Length: {{ session['PetalLengthCm'] }}
+              </li>
+              <li class="list-group-item">
+                Petal Width: {{ session['PetalWidthCm'] }}
+              </li>
+            </ul>
+            <br />
+            <h2>
+              Prediction Result: <span style="color: red">{{ results }}</span>
+            </h2>
+          </div>
+          <div class="span4"></div>
+        </div>
+      </div>
+    </section>
+    <footer></footer>
+
+    <script src="" async defer></script>
+  </body>
+</html>

@@ -1,7 +1,7 @@
-from flask import Flask , render_template , request
+from flask import Flask , request, jsonify, session, url_for, redirect, render_template
 import joblib
 from flower_form import FlowerForm
-
+import os
 
 
 
@@ -31,7 +31,8 @@ def make_prediction(model, encoder, sample_json):
 
 
 app = Flask(__name__)
-
+SECRET_KEY = os.urandom(32)
+app.config['SECRET_KEY'] = SECRET_KEY
 
 
 @app.route('/')
@@ -41,11 +42,29 @@ def home():
     return render_template("index.html")
 
 
-@app.route('/seed')
+@app.route('/seed' , methods=['GET','POST'])
 def seed():
     
+    form = FlowerForm()
+
+    if form.validate_on_submit():
+        session['SepalLengthCm'] = form.SepalLengthCm.data
+        session['SepalWidthCm'] = form.SepalWidthCm.data
+        session['PetalLengthCm'] = form.PetalLengthCm.data
+        session['PetalWidthCm'] = form.PetalWidthCm.data
+
+        return redirect(url_for("predSeed"))
+    return render_template("seed.html", form=form)
+
+@app.route('/predSeed')
+def predSeed():
     
-    return render_template("seed.html")
+    content = {'SepalLengthCm': float(session['SepalLengthCm']), 'SepalWidthCm': float(session['SepalWidthCm']),
+               'PetalLengthCm': float(session['PetalLengthCm']), 'PetalWidthCm': float(session['PetalWidthCm'])}
+
+    results = make_prediction(classifier_loaded, encoder_loaded, content)
+
+    return render_template('predSeed.html', results=results)
 
 
 
